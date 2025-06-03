@@ -1,0 +1,28 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid currentColor;
+  background: transparent;
+  color: inherit;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 8px;
+  margin-right: 20px;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+/* Style for light theme */
+:global([data-theme='light']) .button svg {
+  color: #ffd700; /* Gul farve for solen */
+}
+
+/* Style for dark theme */
+:global([data-theme='dark']) .button svg {
+  color: #c0c0c0; /* Sølv farve for månen */
+}

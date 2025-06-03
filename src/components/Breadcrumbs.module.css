@@ -1,0 +1,32 @@
+.breadcrumbs {
+    max-width: 300px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: var(--bg);
+  border-radius: 4px;
+}
+
+.separator {
+  margin: 0 10px;
+  color: var(--text-color);
+}
+
+.current {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.breadcrumbs a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+  .breadcrumbs {
+    max-width: 100%;
+  }
+}

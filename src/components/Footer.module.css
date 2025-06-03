@@ -1,0 +1,18 @@
+.footerContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  place-content: center;
+  justify-content: space-evenly;
+  height: 10vh;
+  background-color: var(--card-bg);
+}
+
+.footerContainer p {
+font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .footerContainer p {
+    text-align: center;
+  }
+}

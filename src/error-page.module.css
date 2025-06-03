@@ -1,0 +1,17 @@
+.errorContainer{
+    text-align: center;
+    background-color: bisque;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    border-radius: 10px;
+}
+
+.errorText1{
+    background-color: blue;
+    border-radius: 10px;
+}
+
+a{
+    color: white;
+}

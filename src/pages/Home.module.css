@@ -1,0 +1,76 @@
+.container {
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.titleBox {
+  display: grid;
+  justify-self: center;
+  background-color: var(--bg);
+  border-radius: 10px;
+  max-width: 500px;
+  min-width: 330px;
+}
+
+.welcome {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.leftColumn button {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+  border-bottom: 2px;
+  border-style: none none solid none;
+}
+.center2 {
+  text-align: center;
+}
+
+.rightColumn {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.button {
+  padding: 1rem;
+  background-color: var(--bg);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button:hover {
+  transform: scale(1.02);
+}
+
+a{
+  color: var( --font-color);
+  text-decoration: none;
+}
+
+.buttonArt{
+  background-color: var(--bg);
+  border-radius: 10px;
+  text-align: center;
+}

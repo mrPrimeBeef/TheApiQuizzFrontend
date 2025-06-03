@@ -1,0 +1,42 @@
+.header {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header a {
+  max-height: 100px;
+}
+
+.logoImg {
+  width: 100px;
+  height: auto;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.username {
+  margin-right: 1rem;
+  color: var(--text-color);
+}
+
+.logoutBtn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line-color);
+  background-color: var(--bg);
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.logoutBtn:hover {
+  background-color: var(--line-color);
+  transform: scale(1.05);
+}

@@ -1,0 +1,56 @@
+.container {
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.titleBox {
+  display: grid;
+  justify-self: center;
+  background-color: var(--bg);
+  border-radius: 10px;
+  max-width: 500px;
+  min-width: 330px;
+}
+
+.welcome {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.titleBox2 {
+  display: grid;
+  background-color: var(--bg);
+  border-radius: 10px;
+  margin-top: 50px;
+  max-width: 500px;
+  min-width: 330px;
+}
+
+.titleBox2 h2 {
+  margin-top: 20px;
+}
+
+input {
+  text-align: center;
+  margin-left: 0;
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+.error{
+  color: var(--text-color);
+  background-color:  var(--bg);
+  padding: 5px;
+  border-radius: 10px;
+}

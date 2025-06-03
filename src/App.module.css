@@ -1,0 +1,4 @@
+.container {
+ background-image: var(--background-image, url('/assets/bgimg.png'));
+  min-height: 90vh;
+}

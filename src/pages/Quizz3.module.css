@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.titleBox {
+  display: grid;
+  justify-self: center;
+  background-color: var(--bg);
+  border-radius: 10px;
+  max-width: 500px;
+  min-width: 330px;
+}
+
+.welcome {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.selectInput{
+ text-align: center;
+  margin-left: 0;
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+}

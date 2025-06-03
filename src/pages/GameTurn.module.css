@@ -1,0 +1,41 @@
+.container {
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.titleBox {
+  display: grid;
+  justify-self: center;
+  align-items: center;
+  background-color: var(--bg);
+  border-radius: 10px;
+  max-width: 500px;
+  min-width: 330px;
+}
+
+.welcome {
+  justify-content: center;
+  text-align: center;
+  color: var(--text-color);
+  font-size: 2rem;
+}
+.welcome h2 {
+  margin-top: 0.6em;
+}
+
+.questionContainer {
+  background-color: var(--bg);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.scoresContainer {
+  background-color: var(--bg);
+  color: var(--text-color);
+  border-radius: 10px;
+  padding: 10px;
+}
