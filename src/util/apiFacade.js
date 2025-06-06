@@ -1,4 +1,4 @@
-const dev = false;
+const dev = true;
 const BASE_URL = dev 
   ? "http://localhost:7070/api/" 
   : "https://thequizzapi.sem2.dk/api/";
@@ -58,9 +58,9 @@ function saveGame(gameId, body, turn) {
   );
 }
 
-function getSavedGame(gameId){
+function getSavedGame(){
   const options = makeOptions("GET", true);
-  return fetch(`${BASE_URL}game/savegame/${gameId}`, options).then(handleHttpErrors);
+  return fetch(`${BASE_URL}game/savegame`, options).then(handleHttpErrors);
 }
 
 const getUsername = () => {

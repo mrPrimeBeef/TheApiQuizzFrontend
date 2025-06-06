@@ -14,30 +14,33 @@ export default function Quizz3() {
     limit: 0,
     category: "",
     difficulty: "",
+    gameMode: "",
   });
 
-  const [gameMode, setGameMode] = useState("");
 
   const { gameId } = location.state;
 
   const startGame = (event) => {
     event.preventDefault();
 
-    if (!gameInfo.limit || !gameInfo.category || !gameInfo.difficulty) {
+    if (!gameInfo.limit || !gameInfo.category || !gameInfo.difficulty || !gameInfo.gameMode) {
       alert(
         "Please fill out all required fields. (turnbase only gamemode avaliable right now)"
       );
       return;
     }
     facade.postGameinfo(gameId, gameInfo).then((gameDTO) => {
-      navigate("/game" + gameMode, { state: { gameId, gameDTO } });
+      navigate("/game" + gameInfo.gameMode, { state: { gameId, gameDTO } });
     });
   };
 
-  const handleGameMode = (event) =>{
+  const handleGameMode = (event) => {
     const selectedGameMode = event.target.value;
-    setGameMode(selectedGameMode);
-  }
+    setGameInfo((prev) => ({
+      ...prev,
+      gameMode: selectedGameMode,
+    }));
+  };
 
   const handleChange = (event) => {
     const { id, value } = event.target;
@@ -99,14 +102,14 @@ export default function Quizz3() {
         <select
           id="gameMode"
           onChange={handleGameMode}
-          value={gameMode}
+          value={gameInfo.gameMode}
           className={styles.selectInput}
         >
           <option value="" disabled>
             Select a game mode
           </option>
-          <option value="turn">Turn based</option>
-          <option value="buzz">First-to-buzz</option>
+          <option value="TURN">Turn based</option>
+          <option value="FirstBuzz">First-to-buzz</option>
         </select>
 
         <button type="submit">Make game</button>

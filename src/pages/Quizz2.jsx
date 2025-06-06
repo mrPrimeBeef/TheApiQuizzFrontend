@@ -28,19 +28,26 @@ export default function Quizz2() {
   // tmpArr[0].points = 0;
 
   const handleNext = () => {
-    const jsonData = {
-      players: names,
-    };
-    
-    facade
-      .postNamesOfPlayers(jsonData, gameId)
-      .then(() => {
-        navigate("/questions", { state: { gameId } });
-      })
-      .catch((err) => {
-        console.error("Error posting player names:", err);
-      });
+  const allNamesFilled = names.every((player) => player.name.trim() !== "");
+
+  if (!allNamesFilled) {
+    alert("Please fill in all player names before proceeding.");
+    return;
+  }
+
+  const jsonData = {
+    players: names,
   };
+
+  facade
+    .postNamesOfPlayers(jsonData, gameId)
+    .then(() => {
+      navigate("/questions", { state: { gameId } });
+    })
+    .catch((err) => {
+      console.error("Error posting player names:", err);
+    });
+};
 
   const handleNameChange = (index, value) => {
     const updatedNames = [...names];
@@ -58,7 +65,7 @@ export default function Quizz2() {
         {names.map((player, index) => (
           <input
             key={index}
-            placeholder={`Name${index + 1}`}
+            placeholder={`Name ${index + 1}`}
             value={player.name}
             onChange={(e) => handleNameChange(index, e.target.value)}
             className={styles.nameInput}

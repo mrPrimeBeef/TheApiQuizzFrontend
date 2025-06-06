@@ -1,17 +1,32 @@
-.errorContainer{
-    text-align: center;
-    background-color: bisque;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    border-radius: 10px;
+.errorContainer {
+  text-align: center;
+  background-color: bisque;
+  display: flex;
+  /* Ændre for at vise flexbox*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  height: 100vh;
 }
 
-.errorText1{
-    background-color: blue;
-    border-radius: 10px;
+.errorContainer > * {
+  background-color: var(--bg);
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  width: 80%;
 }
 
-a{
-    color: white;
+.errorText1 {
+  background-color: blue;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
 }

@@ -1,5 +1,5 @@
 // react
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 // componets
@@ -18,7 +18,7 @@ export default function App() {
       <div className={styles.container}>
         <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         <Breadcrumbs />
-        <Outlet context={{loggedIn, setLoggedIn}} />
+        <Outlet context={{ loggedIn, setLoggedIn }} />
       </div>
       <Footer />
     </>

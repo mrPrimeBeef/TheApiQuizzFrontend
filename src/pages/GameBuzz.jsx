@@ -12,17 +12,16 @@ import Scores from "../components/Scores";
 export default function GameBuzz() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [turn, setTurn] = useState(1);
 
   const { gameId, gameDTO } = location.state || {};
+  const [turn, setTurn] = useState(gameDTO.turn);
   const maxturns = gameDTO.questions.results.length;
 
   const [players, setPlayers] = useState(gameDTO.players.players);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
   const [choices, setChoices] = useState(false);
 
-  const currentQuestion = gameDTO.questions.results[currentQuestionIndex];
+  const currentQuestion = gameDTO.questions.results[turn -1];
   const currentPlayer = players[currentPlayerIndex];
 
   const handleClick = (name) => {
@@ -45,14 +44,12 @@ export default function GameBuzz() {
 
     setPlayers(updatedPlayers);
 
-    if (currentQuestionIndex >= maxturns - 1) {
+    if (turn >= maxturns - 1) {
       navigate("/winner", { state: { updatedPlayers, gameId } });
       return;
     }
 
-    setCurrentQuestionIndex((prev) => prev + 1);
     setChoices(false);
-
     setTurn((prev) => prev + 1);
   };
 

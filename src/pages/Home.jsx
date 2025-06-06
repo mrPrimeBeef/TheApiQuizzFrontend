@@ -1,5 +1,5 @@
 // react
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 // util
@@ -7,6 +7,7 @@ import styles from "./Home.module.css";
 import facade from "../util/apiFacade";
 
 export default function Home() {
+  const navigate = useNavigate();
   const [bgImage, setBgImage] = useState("/assets/bgimg.png");
   const images = [
     "/assets/bgimg.png",
@@ -31,10 +32,21 @@ export default function Home() {
     });
   };
 
-  const toGame = () =>{
+  const toGame = async () => {
+    try {
+      const SavedGame = await facade.getSavedGame();
+      console.log(SavedGame);
 
-  }
-
+      const navigateTo = `/game${SavedGame.gameMode}`;
+      navigate(navigateTo, {
+        state: { gameId: SavedGame.gameId, gameDTO: SavedGame },
+      });
+    } catch (error) {
+      console.error("Error retrieving saved game:", error);
+      alert("Could not retrieve saved game. Please start a new game.");
+      navigate("/home");
+    }
+  };
   return (
     <div className={styles.container}>
       <div className={styles.titleBox}>
@@ -48,7 +60,11 @@ export default function Home() {
           <Link to="/numberofplayers">
             <button className={styles.button}>New quiz</button>
           </Link>
-          <button onClick={toGame} className={styles.button}>Continue quiz</button>
+
+          <button onClick={toGame} className={styles.button}>
+            Continue quiz
+          </button>
+
           <Link to="/faq">
             <button className={styles.button}>Game FAQ</button>
           </Link>

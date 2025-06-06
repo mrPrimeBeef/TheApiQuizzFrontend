@@ -9,7 +9,7 @@ import styles from "./Login.module.css";
 export default function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
-  const { loggedIn, setLoggedIn } = useOutletContext();
+  const {loggedIn, setLoggedIn} = useOutletContext();
 
   const init = {
     loginusername: "",
@@ -19,10 +19,9 @@ export default function Login() {
   };
   const [loginCredentials, setLoginCredentials] = useState(init);
 
- 
   const performLogin = (evt) => {
     evt.preventDefault();
-    setError(null); // Clear any previous errors
+    setError(null);
 
     facade
       .login(loginCredentials.loginusername, loginCredentials.loginpassword)

@@ -15,13 +15,13 @@ export default function GameTurn() {
 
   const { gameId, gameDTO } = location.state || {}; // Modtag gameId og gameDTO
 
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
   const [players, setPlayers] = useState(gameDTO.players.players);
   const [answers, setAnswers] = useState([]); // Midlertidige svar for det aktuelle spørgsmål
-  const [turn, setTurn] = useState(1);
+  const [turn, setTurn] = useState(gameDTO.turn);
+  const maxturns = gameDTO.questions.results.length;
 
-  const currentQuestion = gameDTO.questions.results[currentQuestionIndex];
+  const currentQuestion = gameDTO.questions.results[turn];
   const currentPlayer = players[currentPlayerIndex];
 
   const handleAnswer = (answer) => {
@@ -54,11 +54,10 @@ export default function GameTurn() {
       setPlayers(updatedPlayers);
       setAnswers([]); // Nulstil svar
       setCurrentPlayerIndex(0); // Reset spillerindeks
-      setTurn((prev) => prev + 1);
 
       // Gå til næste spørgsmål
-      if (currentQuestionIndex < gameDTO.questions.results.length - 1) {
-        setCurrentQuestionIndex((prev) => prev + 1); // Næste spørgsmål
+      if (turn < gameDTO.questions.results.length - 1) {
+        setTurn((prev) => prev + 1);
       } else {
         alert("Quiz finished!");
         navigate("/winner", { state: { gameId, updatedPlayers, gameDTO } });
@@ -74,6 +73,9 @@ export default function GameTurn() {
   return (
     <div className={styles.container}>
       <div className={styles.titleBox}>
+        <h2 className={styles.welcome}>
+          Turn: {turn} out of {maxturns}.
+        </h2>
         <h2 className={styles.welcome}>{currentPlayer.name}'s Turn</h2>
       </div>
 

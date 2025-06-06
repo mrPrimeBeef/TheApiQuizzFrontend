@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         element: <GameTurn />,
       },
       {
-        path: "gameBuzz",
+        path: "gameFirstBuzz",
         element: <GameBuzz />,
       },
       {
