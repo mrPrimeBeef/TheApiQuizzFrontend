@@ -31,6 +31,7 @@ export default function Quizz3() {
       alert("Please fill out all required fields.");
       return;
     }
+
     facade.postGameinfo(gameId, gameInfo).then((gameDTO) => {
       navigate("/game" + gameInfo.gameMode, { state: { gameId, gameDTO } });
     });
@@ -83,7 +84,7 @@ export default function Quizz3() {
           </option>
           <option value="Science: Computers">Science: Computers</option>
           <option value="General Knowledge">General Knowledge</option>
-          <option value="Science &amp; Nature">Science: Nature</option>
+          <option value="Science &amp; Nature">Science & Nature</option>
         </select>
 
         <select
