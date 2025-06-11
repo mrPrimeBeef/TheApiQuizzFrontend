@@ -30,6 +30,7 @@
 .qCard {
   text-align: center;
   background-color: var(--bg);
+  color: var(--text-color);
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -52,6 +53,7 @@
 
 .aCard {
   background-color: var(--bg);
+  color: var(--text-color);
   padding: 10px;
   border: 1px solid var(--line-color);
   border-radius: 5px;

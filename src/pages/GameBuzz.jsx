@@ -21,7 +21,7 @@ export default function GameBuzz() {
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
   const [choices, setChoices] = useState(false);
 
-  const currentQuestion = gameDTO.questions.results[turn -1];
+  const currentQuestion = gameDTO.questions.results[turn];
   const currentPlayer = players[currentPlayerIndex];
 
   const handleClick = (name) => {
@@ -54,7 +54,7 @@ export default function GameBuzz() {
   };
 
   const handleSave = () => {
-    facade.saveGame(gameId, gameDTO, turn);
+    facade.saveGame(gameDTO, turn, gameId);
     navigate("/home");
   };
 

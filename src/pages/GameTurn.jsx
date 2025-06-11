@@ -66,7 +66,7 @@ export default function GameTurn() {
   };
 
   const handleSave = () => {
-    facade.saveGame(gameId, gameDTO, turn);
+    facade.saveGame(gameDTO, turn, gameId);
     navigate("/home");
   };
 

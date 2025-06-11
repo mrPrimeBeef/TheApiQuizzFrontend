@@ -1,4 +1,4 @@
-const dev = false;
+const dev = true;
 const BASE_URL = dev 
   ? "http://localhost:7070/api/" 
   : "https://thequizzapi.sem2.dk/api/";
@@ -51,8 +51,8 @@ function postGameinfo(gameId, body) {
   );
 }
 
-function saveGame(gameId, body, turn) {
-  const options = makeOptions("POST", true, body);
+function saveGame(gameDTO, turn, gameId) {
+  const options = makeOptions("POST", true, gameDTO);
   return fetch(`${BASE_URL}game/savegame/${gameId}/${turn}`, options).then(
     handleHttpErrors
   );

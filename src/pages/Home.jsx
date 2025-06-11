@@ -35,8 +35,7 @@ export default function Home() {
   const toGame = async () => {
     try {
       const SavedGame = await facade.getSavedGame();
-      console.log(SavedGame);
-
+      
       const navigateTo = `/game${SavedGame.gameMode}`;
       navigate(navigateTo, {
         state: { gameId: SavedGame.gameId, gameDTO: SavedGame },
