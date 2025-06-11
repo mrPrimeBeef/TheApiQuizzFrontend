@@ -1,4 +1,4 @@
-const dev = false;
+const dev = true;
 const BASE_URL = dev 
   ? "http://localhost:7070/api/" 
   : "https://thequizzapi.sem2.dk/api/";

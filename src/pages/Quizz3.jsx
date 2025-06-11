@@ -83,7 +83,7 @@ export default function Quizz3() {
           </option>
           <option value="Science: Computers">Science: Computers</option>
           <option value="General Knowledge">General Knowledge</option>
-          <option value="Science &amp; Nature">Science and Nature</option>
+          <option value="Science &amp; Nature">Science: Nature</option>
         </select>
 
         <select
