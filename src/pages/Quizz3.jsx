@@ -17,16 +17,18 @@ export default function Quizz3() {
     gameMode: "",
   });
 
-
   const { gameId } = location.state;
 
   const startGame = (event) => {
     event.preventDefault();
 
-    if (!gameInfo.limit || !gameInfo.category || !gameInfo.difficulty || !gameInfo.gameMode) {
-      alert(
-        "Please fill out all required fields. (turnbase only gamemode avaliable right now)"
-      );
+    if (
+      !gameInfo.limit ||
+      !gameInfo.category ||
+      !gameInfo.difficulty ||
+      !gameInfo.gameMode
+    ) {
+      alert("Please fill out all required fields.");
       return;
     }
     facade.postGameinfo(gameId, gameInfo).then((gameDTO) => {
@@ -79,8 +81,8 @@ export default function Quizz3() {
           <option value="" disabled>
             Select a category
           </option>
-          <option value="Science: Computers">Science:Computers</option>
-          <option value="">Comming Soon</option>
+          <option value="Science: Computers">Science: Computers</option>
+          <option value="General Knowledge">General Knowledge</option>
           <option value="">Comming Soon</option>
         </select>
 
