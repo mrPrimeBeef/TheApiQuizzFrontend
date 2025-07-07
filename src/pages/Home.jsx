@@ -70,11 +70,10 @@ export default function Home() {
         </div>
 
         <div className={styles.rightColumn}>
-          <h2 className={styles.center}>Version 1.2</h2>
+          <h2 className={styles.center}>Version 1.3.3</h2>
           <p>
             Getting the quizz site up and running, as of now, turnbased quizz
-            and first buzz works, The only category avaliable is computer
-            siences, more incomming.
+            and first buzz works, more categories on their way.
           </p>
           <h3 className={styles.center2}>Semantic Versioning 2.0.0</h3>
           <p>Given a version number MAJOR.MINOR.PATCH, increment the:</p>
