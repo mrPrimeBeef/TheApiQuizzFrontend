@@ -75,7 +75,7 @@ export default function Home() {
             Getting the quizz site up and running, as of now, turnbased quizz
             and first buzz works, more categories on their way.
           </p>
-          <h3 className={styles.center2}>Semantic Versioning 2.0.0</h3>
+          <h3 className={styles.center2}>Semantic Versioning #.#.#</h3>
           <p>Given a version number MAJOR.MINOR.PATCH, increment the:</p>
           <p>MAJOR version when you make incompatible API changes</p>
           <p>
